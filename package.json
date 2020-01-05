@@ -1,0 +1,27 @@
+{
+  "name": "vac",
+  "version": "1.0.0",
+  "description": "Vacation planner",
+  "main": "app.js",
+  "engines": {
+    "node": "11.0.2"
+  },
+  "dependencies": {
+    "body-parser": "^1.19.0",
+    "errorhandler": "^1.5.1",
+    "express": "^4.17.1",
+    "express-session": "^1.17.0",
+    "method-override": "^3.0.0",
+    "mongodb": "^3.3.5",
+    "morgan": "^1.9.1",
+    "multer": "^1.4.2",
+    "path": "^0.12.7",
+    "serve-favicon": "^2.5.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Santiago Ortega",
+  "license": "ISC"
+}
