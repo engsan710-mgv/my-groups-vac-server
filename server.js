@@ -8,7 +8,7 @@ const session = require('express-session')
 const bodyParser = require('body-parser')
 const errorHandler = require('errorhandler')
 
-const routes = require('./routes/endpoints')
+const routes = require('./endpoints/endpoints')
 
 var app = express()
 
@@ -25,12 +25,18 @@ app.use(session({
 }))
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-app.use(express.static(path.join(__dirname, 'public')))
-
-app.get('/', routes.home)
 
 
-// error handling middleware should be loaded after the loading the routes
+//*******************************************************************************************
+// Define App Routes Here
+//*******************************************************************************************
+app.use('/', express.static(path.join(__dirname, 'public')))
+app.get('/home', routes.home)
+app.get('/ep1', routes.ep1)
+//*******************************************************************************************
+
+
+// error handling middleware should be loaded after loading the routes
 if (app.get('env') === 'development') {
   app.use(errorHandler())
 }
